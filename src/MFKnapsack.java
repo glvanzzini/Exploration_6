@@ -38,7 +38,7 @@ public class MFKnapsack {
                 }
             }
         }
-        int value = knapsack(4, 4);
+        int value = knapsack(n, W);
         System.out.println(value);
         for(int i = 0; i < n+1; i++) {
             for (int j = 0; j < W +1; j++) {
