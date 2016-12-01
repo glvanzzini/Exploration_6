@@ -5,9 +5,10 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.File;
 public class MFKnapsack {
-    static int[] Weights;
-    static int[] Values;
-    static int[][] F;
+    private static int[] Weights;
+    private static int[] Values;
+    private static int[][] F;
+    private static int[] itemsToBring = new int[4]; //this will be a list of which items are to be brought
     private static final int W = 5;
     public static void main (String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new File(args[0]));
@@ -49,7 +50,8 @@ public class MFKnapsack {
     }
 
     private static int knapsack(int i, int j) {
-       int value = 0;
+       int value;
+
         if(F[i][j] < 0){
            if(j < Weights[i]){
                value = knapsack(i - 1, j);
